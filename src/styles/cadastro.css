@@ -66,6 +66,7 @@ button {
     font-weight: 500;
     font-size: 1rem;
     line-height: 19px;
+    cursor: pointer;
 }
 
 .createUser_login{
