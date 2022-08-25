@@ -1,0 +1,100 @@
+body {
+    background-color: var(--bg-button-color);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.createUser_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--form-color);
+    width: 75vw;
+    height: 370px;
+    border-radius: 10px;
+
+}
+
+.createUser_cadastro {
+    margin-bottom: 20px;
+    color: var(--white);
+    text-shadow: var(--stroke);
+    font-family: var(--font);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.1875rem;
+    line-height: 42px;
+}
+
+input {
+    width: 50vw;
+    height: 35px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    font-family: var(--font);
+    padding-left: 5px;
+}
+
+input::placeholder {
+    color: var(--gray-light);
+    padding-left: 5px;
+    font-family: var(--font);
+
+}
+
+button {
+    width: 140px;
+    height: 38px;
+    border-radius: 10px;
+    margin-top: 15px;
+    background-color: var(--bg-button-color);
+    border: none;
+    text-align: center;
+    color: var(--white);
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 19px;
+}
+
+.createUser_login{
+    margin-top: 15px;
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.87rem;
+    line-height: 19px;
+    color: white;
+}
+
+a{
+    text-decoration: underline;
+    color: white;
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.87rem;
+    line-height: 19px;
+}
+
+
+@media(min-width:768px) {
+    .createUser_div {
+        width: 30vw;
+    }
+
+    input {
+        width: 17vw;
+    }
+}
