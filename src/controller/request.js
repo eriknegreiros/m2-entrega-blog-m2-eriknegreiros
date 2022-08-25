@@ -23,15 +23,18 @@ export class Requisicao {
         return base
     }
 
-    static async createUser (data){
-        const base = await fetch (`${this.baseUrl}/users/register`, {
-            method: 'POST',
-            headers: this.headers,
-            body: JSON.stringify(data)
-        })
-        .then(res => res.json())
-        .then(res => res)
-        .catch (err => console.log(err))
+    static async createUser(data) {
+        const base = await fetch(`${this.baseUrl}/users/register`, {
+                method: 'POST',
+                headers: this.headers,
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(res => {
+                window.location.assign("../../index.html")
+                return res
+            })
+            .catch(err => console.log(err))
     }
 
 }
