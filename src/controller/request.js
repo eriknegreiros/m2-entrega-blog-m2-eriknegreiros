@@ -18,8 +18,7 @@ export class Requisicao {
             .then(res => {
                 localStorage.setItem('userId', res.userId)
                 localStorage.setItem('token', res.token)
-                window.location.assign("../pages/dashboard.html")
-                console.log(res)
+                return res
             })
             .catch(err => console.log(err))
 
@@ -41,42 +40,37 @@ export class Requisicao {
         return base
     }
 
-    static async renderPage(data, page) {
-        const base = await fetch(`${this.baseUrl}/posts?page=${page}`, {
+    static async renderPage(page) {
+        return await fetch(`${this.baseUrl}/posts?page=${page}`, {
                 method: 'GET',
                 headers: this.headers,
-                body: JSON.stringify(data)
             })
             .then(res => res.json())
             .then(res => res)
             .catch(err => console.log(err))
-
-        return base
     }
 
-    static async userById(data, id) {
-        const base = await fetch(`${this.baseUrl}/users/${id}`, {
+    static async userById(id) {
+        return await fetch(`${this.baseUrl}/users/${id}`, {
                 method: 'GET',
                 headers: this.headers,
-                body: JSON.stringify(data)
+
             })
             .then(res => res.json())
             .then(res => res)
             .catch(err => console.log(err))
 
-        return base
+    
     }
 
     static async postById(id) {
-        const base = await fetch(`${this.baseUrl}/posts/${id}`, {
+        return await fetch(`${this.baseUrl}/posts/${id}`, {
                 method: 'GET',
-                headers: this.headers
+                headers: this.headers,
             })
             .then(res => res.json())
             .then(res => res)
             .catch(err => console.log(err))
-
-        return base
     }
 
     static async createPost(data) {
@@ -94,7 +88,7 @@ export class Requisicao {
 
 
     static async editPost(data, id) {
-        const base = await fetch(`${this.baseUrl}/posts/${id}`, {
+        return await fetch(`${this.baseUrl}/posts/${id}`, {
                 method: 'PATCH',
                 headers: this.headers,
                 body: JSON.stringify(data)
@@ -102,15 +96,12 @@ export class Requisicao {
             .then(res => res.json())
             .then(res => res)
             .catch(err => console.log(err))
-
-        return base
     }
 
-    static async deletePost(data, id) {
+    static async deletePost(id) {
         const base = await fetch(`${this.baseUrl}/posts/${id}`, {
                 method: 'DELETE',
                 headers: this.headers,
-                body: JSON.stringify(data)
             })
             .then(res => res.json())
             .then(res => res)
