@@ -3,15 +3,13 @@ import {
 } from "../controller/request.js"
 
 
+
+
 class LoginPage {
 
     static renderLoginPage() {
         const token = localStorage.getItem("token")
 
-        if(token) {
-            window.location.assign('')
-            "../pages/dashboard.html"
-        }
 
         const inputEmail = document.querySelector('.login_email')
         const inputPassword = document.querySelector('.login_password')
@@ -24,7 +22,9 @@ class LoginPage {
                 email: inputEmail.value,
                 password: inputPassword.value
             }
+
             await Requisicao.userLogin(data)
+                window.location.assign('./src/pages/dashboard.html')
         })
     }
 }
