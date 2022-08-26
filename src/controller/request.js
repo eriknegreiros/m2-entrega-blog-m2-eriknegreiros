@@ -54,7 +54,7 @@ export class Requisicao {
         return base
     }
 
-    static async renderPage(data, id) {
+    static async userById(data, id) {
         const base = await fetch(`${this.baseUrl}/users/${id}`, {
                 method: 'GET',
                 headers: this.headers,

@@ -1,3 +1,8 @@
+body {
+    background-color: var(--bg-button-color);
+
+}
+
 .edit_modal {
     display: flex;
     position: absolute;
@@ -171,6 +176,109 @@ textarea::placeholder {
 }
 
 
+.container {
+    display: flex;
+    background-color: var(--header-color);
+    width: 100vw;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.user_container {
+    display: flex;
+    align-items: center;
+}
+
+.user_avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 5vw;
+}
+
+.user_name {
+    margin-left: 10px;
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 700;
+    text-shadow: var(--stroke);
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user_logout_btn {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--bg-button-color);
+    color: white;
+    margin-right: 5vw;
+    width: 90px;
+    height: 25px;
+    font-family: var(--font);
+}
+
+.user_post_div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5vh;
+
+}
+
+.user_post {
+    width: 80vw;
+    height: 65px;
+    display: inline-block;
+}
+
+.user_post_btn{
+    border: none;
+    border-radius: 20px;
+    background-color: var(--bg-button-color);
+    color: white;
+    margin-right: 5vw;
+    width: 90px;
+    height: 25px;
+    font-family: var(--font);
+    margin-top: -35px;
+    margin-left: 150px;
+    
+}
+
+.post_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 70px;
+
+}
+
+.bg_color{
+    display: flex;
+    width: 85vw;
+    background-color: white;
+
+}
+
+
+.post_container_avatar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.post_avatar{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+
+}
 
 
 @media(min-width:768px) {
@@ -193,4 +301,16 @@ textarea::placeholder {
         font-size: 0.87rem;
     }
 
+    .user_post {
+        width: 40vw;
+        height: 70px;
+        
+    }
+
+    .user_post_btn{
+        
+        margin-top: -3vw;
+        margin-left: 500px;
+        
+    }
 }
