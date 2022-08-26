@@ -179,7 +179,6 @@ textarea::placeholder {
 .container {
     display: flex;
     background-color: var(--header-color);
-    width: 100vw;
     height: 60px;
     align-items: center;
     justify-content: space-between;
@@ -205,9 +204,11 @@ textarea::placeholder {
     font-weight: 700;
     text-shadow: var(--stroke);
     color: white;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+     overflow:hidden;
+    text-overflow:ellipsis;
 }
 
 .user_logout_btn {
@@ -219,6 +220,7 @@ textarea::placeholder {
     width: 90px;
     height: 25px;
     font-family: var(--font);
+    cursor: pointer;
 }
 
 .user_post_div {
@@ -233,6 +235,14 @@ textarea::placeholder {
     width: 80vw;
     height: 65px;
     display: inline-block;
+    background-color: var(--bg-post);
+    color: var(--font-color-post);
+}
+
+.user_post::placeholder {
+    font-size: 0.8rem;
+    width: 40%;
+    color: var(--font-color-post);
 }
 
 .user_post_btn{
@@ -240,44 +250,112 @@ textarea::placeholder {
     border-radius: 20px;
     background-color: var(--bg-button-color);
     color: white;
-    margin-right: 5vw;
-    width: 90px;
+    width: 80px;
     height: 25px;
     font-family: var(--font);
-    margin-top: -35px;
-    margin-left: 150px;
-    
+    position: absolute;
+    margin-left: 45vw;
+    margin-top: 50px;
+    cursor: pointer;
 }
 
-.post_div{
+
+.post_container_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.post_bg_color{
+    margin-top: 60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--bg-post);
+    width: 90vw;
+    border-radius: 10px;
+    height: 350px;
+}
+
+.post_div_img_btn{
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    margin-top: 70px;
-
-}
-
-.bg_color{
-    display: flex;
-    width: 85vw;
-    background-color: white;
-
-}
-
-
-.post_container_avatar{
-    display: flex;
-    align-items: center;
     flex-direction: column;
-
+    gap: 32vh;
 }
 
 .post_avatar{
-    width: 90px;
-    height: 90px;
+    margin-top: 10px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
+}
 
+.post_div_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.post_user{
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+.post_text{
+    margin-top: 30px;
+    font-family: var(--font);
+    color: var(--font-color-post);
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.90rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
+
+.post_container_btn{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.post_data{
+    font-family: var(--font);
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 25px;
+
+}
+
+.post_edit_btn{
+    background-color: var(--btn-color);
+    border: none;
+    border-radius: 50%;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.post_delete_btn{
+    background-color: var(--bg-button);
+    border: none;
+    border-radius: 50%;
+    padding: 7px;
+    cursor: pointer;
 }
 
 
@@ -302,15 +380,57 @@ textarea::placeholder {
     }
 
     .user_post {
-        width: 40vw;
+        width: 38vw;
         height: 70px;
         
     }
 
-    .user_post_btn{
+    .user_post_btn{ 
+        margin-left: 26vw;
         
-        margin-top: -3vw;
-        margin-left: 500px;
-        
+    }
+
+    .post_bg_color{
+        width: 38vw;
+        height: 250px;
+        flex-direction: row;
+
+    }
+
+
+    .post_div_img_btn{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+       margin-right: 23vw;
+       gap: 30px;
+    }
+
+    .post_avatar{
+       
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+    }
+
+    .post_div_text{
+        justify-content: center;
+        align-items: baseline;
+        margin-left: 15vw;
+        margin-top: -60px;
+    }
+
+    .post_user{
+       margin-left: 5px;
+    }
+
+    .post_text{
+        text-align: left;
+
+    }
+
+    .post_data{
+        margin-top: 190px;
+        margin-right: 10px;
     }
 }
