@@ -33,7 +33,8 @@ export class Requisicao {
             })
             .then(res => res.json())
             .then(res => {
-                window.location.assign("../../index.html")
+                localStorage.setItem('userId', res.userId)
+                localStorage.setItem('token', res.token)
                 return res
             })
             .catch(err => console.log(err))
