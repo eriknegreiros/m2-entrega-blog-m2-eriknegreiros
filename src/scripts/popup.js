@@ -22,15 +22,14 @@ export class Popup{
     static popupSucees (){
         const body = document.querySelector('body')
          const popup = document.createElement('div')
-         const errorPopup = document.createElement('p')
-         const errorMsg = document.createElement('p')
- 
+         const textPopup = document.createElement('p')
+        
  
          popup.classList.add('popup_sucess')
-         errorPopup.classList.add('text_popup')
+         textPopup.classList.add('text_popup')
         
 
-         errorPopup.innerText = 'Sucesso ao Cadastrar Usuário'
+         textPopup.innerText = 'Sucesso ao Cadastrar Usuário'
  
          popup.append(errorPopup, errorMsg)
          body.append(popup)

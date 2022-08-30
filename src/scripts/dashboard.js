@@ -1,5 +1,5 @@
 import {
-    Requisicao
+    Request
 } from "../controller/request.js";
 
 
@@ -99,11 +99,11 @@ class RenderPagePosts {
                     deletBtn.addEventListener('click', async (event) =>{
                         event.preventDefault()
 
-                        await Requisicao.deletePost(element.id)
+                        await Request.deletePost(element.id)
 
                         deletar.classList.add('close_modal')
 
-                        const arrayDados = await Requisicao.renderPage(1)
+                        const arrayDados = await Request.renderPage(1)
 
                         RenderPagePosts.renderPosts(arrayDados)
 
@@ -123,11 +123,11 @@ class RenderPagePosts {
                         const base = {
                             content: newContent.value
                         }
-                        await Requisicao.editPost(base, element.id)
+                        await Request.editPost(base, element.id)
 
                         edit.classList.add('close_modal')
 
-                        const arrayDados = await Requisicao.renderPage(1)
+                        const arrayDados = await Request.renderPage(1)
 
                         RenderPagePosts.renderPosts(arrayDados)
 
@@ -150,8 +150,8 @@ class RenderPagePosts {
             const base = {
                 content: userPost.value
             }
-            await Requisicao.createPost(base)
-            const page = await Requisicao.renderPage(1)
+            await Request.createPost(base)
+            const page = await Request.renderPage(1)
             const homePage = RenderPagePosts.renderPosts(page)
             
             userPost.value = ''
@@ -162,9 +162,9 @@ class RenderPagePosts {
     }
 }
 
-const arrayDados = await Requisicao.renderPage(1)
+const arrayDados = await Request.renderPage(1)
 
-const userById = await Requisicao.userById(RenderPagePosts.userId)
+const userById = await Request.userById(RenderPagePosts.userId)
 
 RenderPagePosts.renderPosts(arrayDados)
 RenderPagePosts.renderHeader(userById)

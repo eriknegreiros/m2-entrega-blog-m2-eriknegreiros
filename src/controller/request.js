@@ -2,7 +2,7 @@ import {
     Popup
 } from "../scripts/popup.js"
 
-export class Requisicao {
+export class Request {
     static baseUrl = `https://blog-m2.herokuapp.com`
 
     static token = localStorage.getItem('token')
