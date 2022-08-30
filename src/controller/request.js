@@ -46,8 +46,7 @@ export class Request {
                     const popup = Popup.popupError()
                     popup[0].innerText = res.res.message
                 } else if (res.ok) {
-                    const popup = Popup.popupSucees()
-                    popup.innerText = res.res.message
+                    Popup.popupSucees()
                 }
             })
             .catch(err => console.log(err))

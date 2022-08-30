@@ -8,7 +8,7 @@ class CreateUser {
 
         const username = document.querySelector('.createUser_username')
         const email = document.querySelector('.createUser_email')
-        const photo = document.querySelector('.createUser_foto')
+        const photo = document.querySelector('.createUser_photo')
         const pasword = document.querySelector('.createUser_senha')
         const button = document.querySelector('.createUser_btn')
 
