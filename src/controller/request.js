@@ -2,7 +2,7 @@ import {
     Popup
 } from "../scripts/popup.js"
 
-export class Requisicao {
+export class Request {
     static baseUrl = `https://blog-m2.herokuapp.com`
 
     static token = localStorage.getItem('token')
@@ -46,8 +46,7 @@ export class Requisicao {
                     const popup = Popup.popupError()
                     popup[0].innerText = res.res.message
                 } else if (res.ok) {
-                    const popup = Popup.popupSucees()
-                    popup.innerText = res.res.message
+                    Popup.popupSucees()
                 }
             })
             .catch(err => console.log(err))

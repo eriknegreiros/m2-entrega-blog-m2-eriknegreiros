@@ -1,5 +1,5 @@
 import {
-    Requisicao
+    Request
 } from "../controller/request.js"
 
 class CreateUser {
@@ -8,7 +8,7 @@ class CreateUser {
 
         const username = document.querySelector('.createUser_username')
         const email = document.querySelector('.createUser_email')
-        const foto = document.querySelector('.createUser_foto')
+        const photo = document.querySelector('.createUser_photo')
         const pasword = document.querySelector('.createUser_senha')
         const button = document.querySelector('.createUser_btn')
 
@@ -18,16 +18,12 @@ class CreateUser {
             const data = {
                 username: username.value,
                 email: email.value,
-                avatarUrl: foto.value,
+                avatarUrl: photo.value,
                 password: pasword.value
             }
-            await Requisicao.createUser(data)
-            window.location.assign('../../index.html')
+            await Request.createUser(data)
         })
-
-
     }
-
 }
 
 CreateUser.create()
