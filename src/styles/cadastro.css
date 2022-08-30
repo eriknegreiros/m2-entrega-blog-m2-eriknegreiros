@@ -69,7 +69,7 @@ button {
     cursor: pointer;
 }
 
-.createUser_login{
+.createUser_login {
     margin-top: 15px;
     font-family: var(--font);
     font-style: normal;
@@ -80,7 +80,7 @@ button {
     text-align: center;
 }
 
-a{
+a {
     text-decoration: underline;
     color: white;
     font-family: var(--font);
@@ -89,6 +89,77 @@ a{
     font-size: 0.87rem;
     line-height: 19px;
     text-align: center;
+}
+
+.popup {
+    background-image: linear-gradient(to left, rgba(255, 0, 0, 0), rgb(227, 0, 0));
+    position: fixed;
+    margin: 5px;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: showPopUp 7s forwards;
+}
+
+.popup_sucess {
+    background-image: linear-gradient(to left, rgba(255, 0, 0, 0), rgb(0, 224, 82));
+    position: fixed;
+    margin: 5px;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: showPopUp 7s forwards;
+}
+
+.text_popup {
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.error_popup {
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.error_msg {
+    color: white;
+    font-family: var(--font);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
+@keyframes showPopUp {
+    0% {
+        opacity: 0;
+        transform: translateX(20%);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(20%);
+    }
 }
 
 
@@ -101,13 +172,22 @@ a{
         width: 17vw;
     }
 
-    .createUser_login{
+    .createUser_login {
         font-size: 0.87rem;
-       
+
     }
-    
-    a{
-    
+
+    a {
+
         font-size: 0.87rem;
+    }
+
+    .popup {
+        gap: 5px;
+        width: 20vw;
+    }
+
+    .popup_sucess{
+        width: 20vw;
     }
 }
