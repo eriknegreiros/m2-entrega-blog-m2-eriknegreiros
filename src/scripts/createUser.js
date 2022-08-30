@@ -23,10 +23,7 @@ class CreateUser {
             }
             await Request.createUser(data)
         })
-
-
     }
-
 }
 
 CreateUser.create()
