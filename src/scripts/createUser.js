@@ -22,6 +22,7 @@ class CreateUser {
                 password: pasword.value
             }
             await Requisicao.createUser(data)
+            window.location.assign('../../index.html')
         })
 
 
