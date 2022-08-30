@@ -1,3 +1,7 @@
+import {
+    Popup
+} from "../scripts/popup.js"
+
 export class Requisicao {
     static baseUrl = `https://blog-m2.herokuapp.com`
 
@@ -26,18 +30,27 @@ export class Requisicao {
     }
 
     static async createUser(data) {
-        const base = await fetch(`${this.baseUrl}/users/register`, {
+        return await fetch(`${this.baseUrl}/users/register`, {
                 method: 'POST',
                 headers: this.headers,
                 body: JSON.stringify(data)
             })
-            .then(res => res.json())
+            .then(async res => {
+                return {
+                    res: await res.json(),
+                    ok: res.ok
+                }
+            })
             .then(res => {
-                window.location.assign("../../index.html")
-                return res
+                if (!res.ok) {
+                    const popup = Popup.popupError()
+                    popup[0].innerText = res.res.message
+                } else if (res.ok) {
+                    const popup = Popup.popupSucees()
+                    popup.innerText = res.res.message
+                }
             })
             .catch(err => console.log(err))
-        return base
     }
 
     static async renderPage(page) {
@@ -60,7 +73,6 @@ export class Requisicao {
             .then(res => res)
             .catch(err => console.log(err))
 
-    
     }
 
     static async postById(id) {

@@ -37,7 +37,7 @@ class RenderPagePosts {
         const postContainerDiv = document.querySelector('.post_container_div')
         postContainerDiv.innerHTML = ''
 
-        base.data.forEach((element) => {
+           base.data.forEach((element) => {
             const postBgColor = document.createElement('div')
             const postDivImgBtn = document.createElement('div')
             const postAvatar = document.createElement('img')
@@ -65,8 +65,6 @@ class RenderPagePosts {
             postUser.innerText = element.user.username
             postText.innerText = element.content
             postData.innerText = element.createdAt.substring(1, 10).split('-').reverse().join('/') 
-
-
 
             postDivText.append(postUser, postText)
 
